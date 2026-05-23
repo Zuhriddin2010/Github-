@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Avtomatizator Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>GitHub Manager</h1>
+            <p>API orqali boshqaruv paneli</p>
+        </header>
+
+        <div class="card">
+            <div class="card-header">1. GitHub Tokenni ulash</div>
+            <div class="card-body">
+                <p class="info-text">Classic token yarating va <code>repo</code> huquqini bering.</p>
+                <div class="input-row">
+                    <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxx">
+                    <button id="connect-btn">Ulash</button>
+                </div>
+                <div id="user-info" class="status-box hidden"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">2. Yangi Repozitoriy Ochish</div>
+            <div class="card-body">
+                <input type="text" id="new-repo-name" placeholder="Repozitoriy nomi (masalan: mening-loyiham)">
+                <input type="text" id="new-repo-desc" placeholder="Tavsif (ixtiyoriy)">
+                <button id="create-repo-btn" class="btn-primary">Repozitoriy yaratish</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">3. Fayl yuklash (Commit)</div>
+            <div class="card-body">
+                <label>Qaysi repoga yuklansin?</label>
+                <input type="text" id="target-repo" placeholder="Repo nomi">
+                
+                <div class="file-upload-zone">
+                    <input type="file" id="file-picker" hidden>
+                    <label for="file-picker" class="file-label">📁 Faylni tanlash</label>
+                    <span id="file-name-display">Fayl tanlanmagan</span>
+                </div>
+
+                <label>GitHub-dagi yo'li</label>
+                <input type="text" id="github-path" placeholder="Masalan: index.html">
+                
+                <label>Fayl tarkibi (Matnli bo'lsa)</label>
+                <textarea id="file-preview" rows="4" placeholder="Fayl tanlanganda bu yerda ko'rinadi..."></textarea>
+                
+                <button id="upload-btn" class="btn-success">Faylni yuklash</button>
+            </div>
+        </div>
+
+        <div id="log-panel" class="log-panel hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
